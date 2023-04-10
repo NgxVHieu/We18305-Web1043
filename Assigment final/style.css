@@ -58,6 +58,7 @@
     display: block;
     font-weight: bold ;
   }
+  
   .banner-text {
       position: absolute;
       top: 50%;
@@ -177,39 +178,72 @@
             color: #fff;
             }
   
-  /* ------------------------------------- */
-  /* ---------FOOTER------------------- */
-  /* ---------------------------------- */
-  footer{
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 20px;
-  }
-  
-  /* ---------------------------------- */
-  /* ----------CONTACT FORM------------- */
-  /* ------------------------------------------- */
-  .contact-section {
-    text-align: right;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .contact-section ul {
-    text-align:left;
-  
-  }
-  /* countdown-clock */
-  #countdown-clock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2px;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-  }
-  /* cars brand about */
+ /* Style cho footer */
+footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+.contact-section {
+  margin-top: 20px;
+}
+
+.contact-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.contact-section textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.information {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.information li {
+  margin-bottom: 5px;
+}
+
+/* Style cho Countdown */
+#countdown {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+  /* cars and about */
   .cars {
     background-color: black;
     padding: 20px;
@@ -231,13 +265,6 @@
     margin-bottom: 20px;
   }
   
-  
-  .brand {
-    background-color:black;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-  }
   
   .about {
     background-color: #f7f7f7;
@@ -278,5 +305,138 @@
     line-height: 1.5;
     margin-bottom: 30px;
   }
+  /* bo sung header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 9999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+/* noi bat phan chu cho menu  */
+  #main-menu li:hover {
+    background-color: red;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* nút cho phần slider */
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
   
+
+  /* Định dạng phần Our Brands */
+.brand {
+  background-color: black;
+  padding: 50px 0;
+}
+
+/* Định dạng tiêu đề */
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 50px;
+}
+
+/* Định dạng các nút lọc */
+.brand-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.brand-menu button {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.brand-menu button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.brand-menu button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Định dạng các hình ảnh thương hiệu */
+.brand-item {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.brand-name {
+  margin-bottom: 20px;
+}
+
+.brand-name h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.brand-img img {
+  max-width: 100%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+ 
+/*zoom*/
+.img-zoom:hover {
+  transform: scale(1.2); /* thay đổi giá trị scale để tăng hoặc giảm độ phóng đại */
+  transition: transform 0.3s ease; /* thêm hiệu ứng chuyển động trơn tru */
+}
+
   

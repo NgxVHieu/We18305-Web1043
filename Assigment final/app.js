@@ -59,6 +59,8 @@ btns.forEach((btn) => {
     btn.classList.add('active');
   });
 });
+
+
 //  about
 // Add active class to the first tab and show the first tab content
 document.querySelector(".tablinks").classList.add("active");
@@ -78,3 +80,19 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.classList.add("active");
 }
+
+
+/* JavaScript */
+const menuItems = document.querySelectorAll('#main-menu li');
+
+menuItems.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    item.classList.add('active');
+  });
+
+  item.addEventListener('mouseout', () => {
+    item.classList.remove('active');
+  });
+});
+
+

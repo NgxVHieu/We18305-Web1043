@@ -25,61 +25,84 @@
             </div>
         </header>
 
-        <!-- slider -->
-        <div class="banner">
-<div class="bannerslider">
-        <div class="slideshow-container">
-      
-            <div class="mySlides fade">
-              <img src="images/1.jpg" style="width:100%">
-            </div>
-            
-            <div class="mySlides fade">
-              <img src="images/2.jpg" style="width:100%">
-            </div>
-            
-            <div class="mySlides fade">
-              <img src="images/3.jpg" style="width:100%">
-            </div>
-            
+<!-- slider -->
+<div class="banner">
+  <div class="bannerslider">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="images/1.jpg" style="width:100%">
+        <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+        <div class="next" onclick="plusSlides(1)">&#10095;</div>        
+      </div>
+      <div class="mySlides fade">
+        <img src="images/2.jpg" style="width:100%">
+        <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+        <div class="next" onclick="plusSlides(1)">&#10095;</div>        
+      </div>
+      <div class="mySlides fade">
+        <img src="images/3.jpg" style="width:100%">
+        <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+        <div class="next" onclick="plusSlides(1)">&#10095;</div>        
+      </div>
+    </div>
+    <div class="banner-text">
+      <h1>Welcome to Luxury Cars</h1>
+      <p>Experience the thrill of driving a brand luxury cars</p>
+      <br>
+      <a href="#" class="button">View Cars</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+  </div>
 </div>
-            <div class="banner-text">
-                <h1>Welcome to Luxury Cars</h1>
-                <p>Experience the thrill of driving a brand luxury cars</p>
-                <br>
-                <a href="#" class="button">View Cars</a>
-              </div>
-            
-            </div>
-            <br>
-            
-            <div style="text-align:center">
-              <span class="dot"></span> 
-              <span class="dot"></span> 
-              <span class="dot"></span> 
-            </div>
-</div>
-            <script>
-            let slideIndex = 0;
-            showSlides();
-            
-            function showSlides() {
-              let i;
-              let slides = document.getElementsByClassName("mySlides");
-              let dots = document.getElementsByClassName("dot");
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-              }
-              slideIndex++;
-              if (slideIndex > slides.length) {slideIndex = 1}    
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
-              setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }
-            </script>
+
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+  // Change slide every 2 seconds
+  setInterval(function() {
+    plusSlides(1)
+  }, 2000);
+  function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+</script>
 
             <main>
               <section class="hero">
@@ -175,7 +198,7 @@
                             <h3>Lamborghini</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-lamborghini.jpg" alt="Lamborghini">
+                            <img class="img-zoom"  src="images/hang-xe-lamborghini.jpg" alt="Lamborghini">
                           </div>
                           
                         </div>
@@ -184,7 +207,7 @@
                             <h3>Ferrari</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-ferrari.jpg" alt="Ferrari">
+                            <img class="img-zoom"  src="images/hang-xe-ferrari.jpg" alt="Ferrari">
                           </div>
                           
                         </div>
@@ -193,7 +216,7 @@
                             <h3>Porsche</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/cars4.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/cars4.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -202,7 +225,7 @@
                             <h3>Pagani Huayra</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-Pagani-Huayra.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/hang-xe-Pagani-Huayra.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -211,7 +234,7 @@
                             <h3>Mercedes</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-maybach.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/hang-xe-maybach.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -220,7 +243,7 @@
                             <h3>Lexus</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-lexus.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/hang-xe-lexus.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -229,7 +252,7 @@
                             <h3>Aston Martin</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-Aston-Martin.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/hang-xe-Aston-Martin.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -238,7 +261,7 @@
                             <h3>Bentley</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-bentley.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/hang-xe-bentley.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -247,7 +270,7 @@
                             <h3>Koenigsegg</h3>
                           </div>
                           <div class="brand-img">
-                            <img src="images/hang-xe-oto-Koenigsegg.jpg" alt="Porsche">
+                            <img class="img-zoom"  src="images/hang-xe-oto-Koenigsegg.jpg" alt="Porsche">
                           </div>
                          
                         </div>
@@ -255,7 +278,97 @@
                     </div>
                   </div>
                 </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+  // tiếp nhận sự kiện click trên các nút button
+  $('.brand-menu button').click(function() {
+    // Lấy giá trị của thuộc tính data-filter trên nút button được click
+    var filterValue = $(this).attr('data-filter');
+
+    // Hiển thị hoặc ẩn các phần tử tương ứng dựa trên giá trị của filterValue
+    if (filterValue === 'all') {
+      $('.brand-item').show();
+    } else {
+      $('.brand-item').not('.' + filterValue).hide();
+      $('.brand-item.' + filterValue).show();
+    }
+
+    // Thêm hoặc xóa lớp CSS 'active' trên các nút button để đánh dấu nút button được click
+    $('.brand-menu button').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+</script>
+
               </div>
+
+              
+              <div class="contact-form">
+                <h2>Reach out to us</h2>
+                <form>
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Send It</button>
+                </form>
+              </div>
+              
+              <style>
+              .contact-form {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+              }
+              
+              .contact-form h2 {
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              
+              .form-group {
+                margin-bottom: 20px;
+              }
+              
+              .form-group label {
+                display: block;
+                margin-bottom: 5px;
+              }
+              
+              .form-group input,
+              .form-group textarea {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+              }
+              
+              .btn {
+                display: block;
+                margin: 0 auto;
+                padding: 10px 20px;
+                background-color: red;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+              
+              .btn:hover {
+                background-color: red ;
+              }
+              </style>              
               
             </section>
             
@@ -269,126 +382,60 @@
             
 
             <footer>
-              <p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                  Copyright &copy; 2023 Lyxury Cars
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-              </p>
-
-              <section class="contact-section">
-                <div class="row">
-                    
-                    <div class="col span-2-of-3">
-                       <form>
-                           <div class="row">
-                               <div class="col span-1-of-3">
-                                    <label>Name</label>
-                               </div>
-                               <div class="col span-2-of-3">
-                                    <input type="text" placeholder="Your Name">
-                               </div>
-                           </div>
-                           <div class="row">
-                               <div class="col span-1-of-3">
-                                    <label>Email</label>
-                               </div>
-                               <div class="col span-2-of-3">
-                                    <input type="email" placeholder="Your Email">
-                               </div>
-                           </div>
-                           <div class="row">
-                               <div class="col span-1-of-3">
-                                    <label>Message</label>
-                               </div>
-                               <div class="col span-2-of-3">
-                                    <textarea  placeholder="Your Message"></textarea>
-                               </div>
-                           </div>
-                           <div class="row">
-                               <input type="submit" class="btn" value="Send It">
-                           </div>
-                       <div class="col span-1-of-3">
-                        <ul class="information">
-                            <li>Address: Prince Turki Ibn Abdulaziz Al Awwal Rd, Hittin, Riyadh 13513</li>
-                            <li></i>Email: info@sevenauction.com</li>
-                            <li></i>Phone: (+084 )099-923-232-320</li>
-                        </ul>
-                    </div>
-                    </div>
-                  </form>
-                </div>
-             </section>
-             <!-- kiemtraloi -->
-             <head>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                          <p>&copy; 2023 Lyxury Cars</p>
+                          <ul class="information">
+                              <li>Address: Prince Turki Ibn Abdulaziz Al Awwal Rd, Hittin, Riyadh 13513</li>
+                              <li>Email: info@sevenauction.com</li>
+                              <li>Phone: (+084 )099-923-232-320</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          
+              <div id="countdown"></div>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
-            </head>
-            <style>
-      #countdown {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: justify;
-        margin-top: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="countdown"></div>
-    <script>
-      function initCountdown() {
-        // Get user's location
-        navigator.geolocation.getCurrentPosition(function (position) {
-          var latitude = position.coords.latitude;
-          var longitude = position.coords.longitude;
+              <script>
+                  function initCountdown() {
+                      navigator.geolocation.getCurrentPosition(function (position) {
+                          var latitude = position.coords.latitude;
+                          var longitude = position.coords.longitude;
+                          var countdownTime = calculateCountdownTime(latitude, longitude);
+                          startCountdown(countdownTime);
+                      });
+                  }
+                  
+                  function calculateCountdownTime(latitude, longitude) {
+                      var countdownTime = Math.abs(latitude) + Math.abs(longitude);
+                      countdownTime = Math.round(countdownTime * 60);
+                      return countdownTime;
+                  }
+                  
+                  function startCountdown(countdownTime) {
+                      var countdownElement = document.getElementById("countdown");
+                      var countdownInterval = setInterval(function () {
+                          countdownTime--;
+                          var minutes = Math.floor(countdownTime / 60);
+                          var seconds = countdownTime % 60;
+                          countdownElement.innerHTML = ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
+                          if (countdownTime === 0) {
+                              clearInterval(countdownInterval);
+                              playSound();
+                          }
+                      }, 1000);
+                  }
+                  
+                  function playSound() {
+                      var sound = new Audio("alarm.mp3");
+                      sound.play();
+                  }
+                  
+                  initCountdown();
+              </script>
+          </footer>
           
-          // Calculate the countdown time based on the user's location
-          var countdownTime = calculateCountdownTime(latitude, longitude);
-          
-          // Start the countdown
-          startCountdown(countdownTime);
-        });
-      }
-      
-      function calculateCountdownTime(latitude, longitude) {
-        // Calculate the countdown time based on the user's location
-        // Here we just use a simple formula as an example
-        // You can replace this with your own algorithm
-        var countdownTime = Math.abs(latitude) + Math.abs(longitude);
-        countdownTime = Math.round(countdownTime * 60); // Convert to seconds
-        return countdownTime;
-      }
-      
-      function startCountdown(countdownTime) {
-        var countdownElement = document.getElementById("countdown");
-        var countdownInterval = setInterval(function () {
-          countdownTime--;
-          var minutes = Math.floor(countdownTime / 60);
-          var seconds = countdownTime % 60;
-          countdownElement.innerHTML =
-            ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
-          if (countdownTime === 0) {
-            clearInterval(countdownInterval);
-            playSound();
-          }
-        }, 1000);
-      }
-      
-      function playSound() {
-        // Play the sound when the countdown reaches zero
-        var sound = new Audio("alarm.mp3");
-        sound.play();
-      }
-      
-      initCountdown();
-    </script>
-            </footer>
 
         <script src="app.js"></script>    
             
